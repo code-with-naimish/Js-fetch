@@ -1,12 +1,16 @@
 "use strict";
 
 const fetchProducts = async function () {
+  spinner();
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     if (!response.ok) {
       throw new Error("Something went wrong! Please try again later ");
     }
     const data = await response.json();
+
+    processUi();
+
     delete data[0].title;
     console.log(data);
     const isArray = Array.isArray(data);
@@ -30,9 +34,15 @@ const fetchProducts = async function () {
 
     console.log(isArray);
   } catch (error) {
+    showToast();
     console.log(error);
   } finally {
+    spinner();
   }
 };
 
 fetchProducts();
+
+function spinner() {}
+function processUi() {}
+function showToast() {}
