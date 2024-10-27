@@ -118,6 +118,10 @@ nav a.active-link {
   height: calc(100vh - 72px);
 }
 
+.main {
+  padding-bottom: 82px;
+}
+
 /* card-box */
 .grid-box {
   display: grid;
@@ -202,7 +206,7 @@ nav a.active-link {
 
 footer {
   background-color: var(--light-black);
-  padding: 3.4rem 0;
+  padding: 2.8rem 0;
   text-align: center;
   position: fixed;
   bottom: 0;
