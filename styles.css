@@ -1,6 +1,6 @@
 :root {
   --primary: #d6336c;
-  --secondary: #e64980;
+  --primary-light: #d6336c66;
   --border: #a61e4d;
   --white: #fff;
   --black: #0f0f0f;
@@ -160,6 +160,40 @@ nav a.active-link {
 
 .product-details .price {
   color: var(--primary);
+}
+
+.load-more-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem var(--primary-light);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover:enabled {
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
