@@ -4,7 +4,7 @@
   --border: #a61e4d;
   --white: #fff;
   --black: #0f0f0f;
-  --light-black: #121212;
+  --light-black: #222;
 }
 
 *,
@@ -117,8 +117,9 @@ nav a {
 /* card-box */
 .grid-box {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  /* background-color: blue; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 6rem;
 }
 
 .grid-box figure {
