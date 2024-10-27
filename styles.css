@@ -200,6 +200,23 @@ nav a.active-link {
   opacity: 0.9;
 }
 
+footer {
+  background-color: var(--light-black);
+  padding: 3.4rem 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 1.4rem;
+}
+
+.footer-text .github-link {
+  color: var(--primary);
+}
+
 @media (max-width: 768px) {
   .grid-box {
     grid-template-columns: repeat(2, 1fr);
