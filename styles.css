@@ -4,6 +4,7 @@
   --border: #a61e4d;
   --white: #fff;
   --black: #0f0f0f;
+  --light-black: #121212;
 }
 
 *,
@@ -29,10 +30,21 @@ body {
   color: var(--white);
 }
 
+.container {
+  max-width: 1280px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
 header {
+  background-color: var(--light-black);
+}
+
+.main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 2rem 0;
 }
 
 .logo-box {
@@ -44,4 +56,27 @@ header {
 .logo-icon {
   font-size: 3.2rem;
   color: var(--primary);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.5s;
+}
+
+a:hover,
+a:active {
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav a {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
