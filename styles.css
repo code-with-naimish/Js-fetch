@@ -73,12 +73,16 @@ a:active {
 nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 nav a {
   font-size: 1.8rem;
   font-weight: 500;
+}
+
+nav a.active-link {
+  color: var(--primary);
 }
 
 /* HTML: <div class="loader"></div> */
@@ -156,4 +160,11 @@ nav a {
 
 .product-details .price {
   color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 4rem;
+  }
 }
