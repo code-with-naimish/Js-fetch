@@ -1,9 +1,9 @@
 "use strict";
-const loaderBox = document.querySelector("#loader-box");
-const noDataBox = document.querySelector("#no-data-box");
-const mainData = document.querySelector("#main-data");
 
 const fetchProducts = async function () {
+  const loaderBox = document.querySelector("#loader-box");
+  const noDataBox = document.querySelector("#no-data-box");
+  const mainData = document.querySelector("#main-data");
   noDataBox.classList.add("hidden");
   mainData.classList.add("hidden");
 
@@ -15,10 +15,11 @@ const fetchProducts = async function () {
     const data = await response.json();
 
     if (Array.isArray(data) && data.length > 0) {
-      console.log(data);
+      // console.log(data);
 
       // noDataBox.classList.add("hidden");
       mainData.classList.remove("hidden");
+      processUi(data);
     } else {
       // mainData.classList.add("hidden");
       noDataBox.classList.remove("hidden");
@@ -35,6 +36,32 @@ const fetchProducts = async function () {
 
 fetchProducts();
 
-function spinner() {}
-function processUi() {}
-function showToast() {}
+// function spinner() {}
+
+// function showToast() {}
+
+function processUi(data) {
+  const productList = document.querySelector("#product-list");
+  console.log(data);
+
+  const card = productCard(data[0]);
+  console.log(card);
+
+  if (card) {
+    productList.insertAdjacentHTML("afterbegin", card);
+  }
+}
+
+function productCard(product) {
+  return ` <div class="product-card">
+              <figure>
+                <img src="${product.image}" alt="${product.title}">
+              </figure>
+
+              <div class="product-details">
+                <span class="category">${product.category}</span>
+                <p class="title">${product.title}</p>
+                <p class="price">₹${product.price}</p>
+              </div>
+            </div>`;
+}
