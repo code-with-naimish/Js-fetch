@@ -17,17 +17,17 @@ const fetchProducts = async function () {
     if (Array.isArray(data) && data.length > 0) {
       console.log(data);
 
-      noDataBox.classList.add("hidden");
+      // noDataBox.classList.add("hidden");
       mainData.classList.remove("hidden");
     } else {
-      mainData.classList.add("hidden");
+      // mainData.classList.add("hidden");
       noDataBox.classList.remove("hidden");
     }
   } catch (error) {
     console.log(error);
 
     noDataBox.classList.remove("hidden");
-    mainData.classList.add("hidden");
+    // mainData.classList.add("hidden");
   } finally {
     loaderBox.classList.add("hidden");
   }
