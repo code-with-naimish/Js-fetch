@@ -1,7 +1,12 @@
 "use strict";
+const loaderBox = document.querySelector("#loader-box");
+const noDataBox = document.querySelector("#no-data-box");
+const mainData = document.querySelector("#main-data");
 
 const fetchProducts = async function () {
-  spinner();
+  noDataBox.classList.add("hidden");
+  mainData.classList.add("hidden");
+
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     if (!response.ok) {
@@ -9,35 +14,22 @@ const fetchProducts = async function () {
     }
     const data = await response.json();
 
-    processUi();
+    if (Array.isArray(data) && data.length > 0) {
+      console.log(data);
 
-    delete data[0].title;
-    console.log(data);
-    const isArray = Array.isArray(data);
-    if (isArray && data.length > 0) {
-      const titleArray = data.map(function (product, i, arr) {
-        return product?.title;
-      });
-      const filteredArray = titleArray.filter(function (val, i, arr) {
-        // return (
-        //   val !== undefined ||
-        //   val !== "" ||
-        //   val !== NaN ||
-        //   val !== 0 ||
-        //   val !== null
-        // );  dont do this, do this👇🏻
-
-        return val;
-      });
-      console.log(filteredArray);
+      noDataBox.classList.add("hidden");
+      mainData.classList.remove("hidden");
+    } else {
+      mainData.classList.add("hidden");
+      noDataBox.classList.remove("hidden");
     }
-
-    console.log(isArray);
   } catch (error) {
-    showToast();
     console.log(error);
+
+    noDataBox.classList.remove("hidden");
+    mainData.classList.add("hidden");
   } finally {
-    spinner();
+    loaderBox.classList.add("hidden");
   }
 };
 

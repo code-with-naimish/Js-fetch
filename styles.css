@@ -110,6 +110,10 @@ nav a.active-link {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 .no-data {
   /* background-color: aqua; */
   display: flex;
