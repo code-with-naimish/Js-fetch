@@ -43,13 +43,14 @@ fetchProducts();
 function processUi(data) {
   const productList = document.querySelector("#product-list");
   console.log(data);
+  data.forEach((element) => {
+    const card = productCard(element);
+    console.log(card);
 
-  const card = productCard(data[0]);
-  console.log(card);
-
-  if (card) {
-    productList.insertAdjacentHTML("afterbegin", card);
-  }
+    if (card) {
+      productList.insertAdjacentHTML("afterbegin", card);
+    }
+  });
 }
 
 function productCard(product) {
