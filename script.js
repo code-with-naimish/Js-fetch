@@ -48,7 +48,7 @@ function processUi(data) {
     console.log(card);
 
     if (card) {
-      productList.insertAdjacentHTML("afterbegin", card);
+      productList.insertAdjacentHTML("beforeEnd", card);
     }
   });
 }
