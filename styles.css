@@ -129,13 +129,12 @@ nav a.active-link {
 /* card-box */
 .grid-box {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   padding-top: 6rem;
 }
 
 .product-card {
-  /* background-color: rgb(175, 40, 40); */
   display: flex;
   flex-direction: column;
 }
@@ -158,11 +157,11 @@ nav a.active-link {
 
 .product-details {
   margin-top: 1rem;
-  flex-grow: 1;
-  /* background-color: green; */
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex-grow: 1;
 }
 
 .product-details .category {
@@ -235,6 +234,22 @@ footer {
 
 .footer-text .github-link {
   color: var(--primary);
+}
+
+.two-line-sentence {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.one-line-sentence {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* Limit to 1 lines */
+  -webkit-box-orient: vertical;
 }
 
 @media (max-width: 768px) {

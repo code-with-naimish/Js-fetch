@@ -54,19 +54,19 @@ function processUi(data) {
 }
 
 function productCard(product) {
-  return ` <div class="product-card">
-              <figure>
-                <img src="${product.image}" alt="${product.title}">
-              </figure>
+  return `  <div class="product-card">
+    <figure>
+      <img src="${product.image}" alt="${product.title}">
+    </figure>
 
-              <div class="product-details">
-              <div>
-                <span class="category">${product.category}</span>
-                <p class="title">${product.title}</p>
-                </div>
-                <div>
-                <p class="price">₹${product.price}</p>
-                </div>
-              </div>
-            </div>`;
+    <div class="product-details">
+      <div>
+        <span class="category">${product.category}</span>
+        <p class="title two-line-sentence">${product.title}</p>
+      </div>
+      <div>
+        <p class="price">₹${product.price}</p>
+      </div>
+    </div>
+  </div>`;
 }
