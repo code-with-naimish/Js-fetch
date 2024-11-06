@@ -60,9 +60,13 @@ function productCard(product) {
               </figure>
 
               <div class="product-details">
+              <div>
                 <span class="category">${product.category}</span>
                 <p class="title">${product.title}</p>
+                </div>
+                <div>
                 <p class="price">₹${product.price}</p>
+                </div>
               </div>
             </div>`;
 }

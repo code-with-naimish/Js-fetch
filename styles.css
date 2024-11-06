@@ -134,12 +134,19 @@ nav a.active-link {
   padding-top: 6rem;
 }
 
+.product-card {
+  /* background-color: rgb(175, 40, 40); */
+  display: flex;
+  flex-direction: column;
+}
+
 .grid-box figure {
   width: 100%;
   height: 180px;
   overflow: hidden;
   background-color: var(--white);
   padding: 1.8rem 1.4rem;
+  flex: none;
   /* border-radius: 16px; */
 }
 
@@ -151,6 +158,11 @@ nav a.active-link {
 
 .product-details {
   margin-top: 1rem;
+  flex-grow: 1;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-details .category {
