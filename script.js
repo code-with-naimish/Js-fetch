@@ -1,5 +1,43 @@
 "use strict";
 
+// const numArr = [1, 3, 8, 0, 6, 3];
+// numArr.sort();
+// numArr.reverse();
+// console.log(numArr);
+
+// const stringArr = ["gopal", "nam", "srya", "kittu"];
+// stringArr.sort();
+// stringArr.reverse();
+// console.log(stringArr);
+
+// const clintsArr = [
+//   {
+//     age: 75,
+//     name: "gopal",
+//   },
+//   {
+//     age: 33,
+//     name: "chotu",
+//   },
+//   {
+//     age: 95,
+//     name: "motu",
+//   },
+//   {
+//     age: 20,
+//     name: "kittu",
+//   },
+// ];
+
+// clintsArr.sort((a, b) => {
+//   return a.name.localeCompare(b.name);
+// });
+
+// clintsArr.sort((a, b) => {
+//   return b.name.localeCompare(a.name);
+// });
+// console.log(clintsArr);
+
 const fetchProducts = async function () {
   const loaderBox = document.querySelector("#loader-box");
   const noDataBox = document.querySelector("#no-data-box");
@@ -19,6 +57,38 @@ const fetchProducts = async function () {
 
       // noDataBox.classList.add("hidden");
       mainData.classList.remove("hidden");
+
+      //------data filter based on price range b/w min 64 to max 500-------
+      // const newArr = data.filter((product) => {
+      //   return product.price >= 64 && product.price <= 500;
+      // });
+
+      //-------adding saleprice to main array-------
+      // const newArr = data.map((product) => {
+      //   return { ...product, salePrice: product.price * 2 };
+      // });
+
+      //------price based sorting - ascending--------
+      // const ascPriceArr = [...data].sort((a,b)  => {
+      //   return a.price - b.price;
+      // }
+
+      // )
+
+      //------price based sorting - decending--------
+
+      // const decPriceArr = [...data].sort((a, b) => {
+      //   return b.price - a.price;
+      // });
+
+      //------title (string) based sorting - aecending--------
+
+      // const titleArrAac = [...data].sort((a, b) => {
+      //   return a?.title?.localeCompare(b.title);
+      // });
+
+      // console.log(titleArrAac);
+
       processUi(data);
     } else {
       // mainData.classList.add("hidden");
@@ -42,10 +112,9 @@ fetchProducts();
 
 function processUi(data) {
   const productList = document.querySelector("#product-list");
-  console.log(data);
+
   data.forEach((element) => {
     const card = productCard(element);
-    console.log(card);
 
     if (card) {
       productList.insertAdjacentHTML("beforeEnd", card);
